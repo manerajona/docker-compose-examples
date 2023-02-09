@@ -1,4 +1,5 @@
 version: '3'
+
 services:
   artifactory:
     image: ${DOCKER_REGISTRY}/jfrog/artifactory-jcr:${ARTIFACTORY_VERSION}

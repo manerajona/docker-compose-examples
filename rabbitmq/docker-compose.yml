@@ -1,0 +1,13 @@
+# Use guest/guest as credentials
+version: '3.2'
+
+services:
+  rabbit:
+    image: rabbitmq:management
+    command: sh -c "rabbitmq-plugins enable rabbitmq_management; echo '[{rabbit, [{loopback_users, [] }]}].' > /etc/rabbitmq/rabbitmq.config; rabbitmq-server"
+    restart: always
+    ports:
+      - 15672:15672
+      - 5672:5672
+      - 5671:5671
+      - 4369:4369
